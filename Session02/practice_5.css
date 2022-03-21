@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    background: #d6d6d6;
+    padding: 20px 0 20px 20px;
+}
+
+
+.talk-bang {
+    display: flex;
+    flex: 3;
+}
+
+.talk-img {
+    flex: 1;
+    border-radius: 10px;
+}
+
+.talk-img img {
+    display: block;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.talk-text {
+    flex: 3;
+    margin-left: 40px;
+}
+
+.talk-title span {
+    color: #8a8a8a;
+}
+
+.talk-item {
+    font-size: 0.8em;
+    color: #8a8a8a;
+}
+
+.talk-time {
+    flex: 1;
+    align-self: start;
+}
+
+.talk-time-text {
+    color: grey;
+}
+
+
+
+
+
+
+.container-test {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    background: #d6d6d6;
+    padding: 20px 0 20px 20px;
+    margin-top: 50px;
+}
+
+
+.talk-bang-test {
+    display: flex;
+    flex: 3;
+}
+
+.talk-img-test {
+    flex: 1;
+    border-radius: 10px;
+}
+
+.talk-img-test img {
+    display: block;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.talk-text-test {
+    flex: 3;
+    margin-left: 40px;
+}
+
+.talk-title-test span {
+    color: #8a8a8a;
+}
+
+.talk-item-test {
+    font-size: 0.8em;
+    color: #8a8a8a;
+}
+
+.talk-time-test {
+    flex: 1;
+    align-self: start;
+}
+
+.talk-time-text-test {
+    color: grey;
+
+}
+
+
+@media screen and (min-width: 400px) {
+    
+}
