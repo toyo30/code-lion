@@ -5,8 +5,6 @@ class Calculator:
     # 여기에 코드를 작성해보세요!
     # 클래스 명은 항상 대문자로 작성을 해보자. 
    
-
-
    #__init__
     #생성자 함수 멤버 변수를 정의하는 것이다. 
     #이것을 소유자의 기초적인 정보. 
@@ -35,7 +33,7 @@ class Calculator:
         if (num == 0) :
             print("0으로 나눌 수 없습니다.")
             return None
-            
+
         self.result /= num
         return self.result
 
