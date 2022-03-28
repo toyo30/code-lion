@@ -1,3 +1,10 @@
 *.DS_Store
 Pipfile.lock
 Pipfile
+.vscode
+migrations
+db.sqlite3
+__pycache__
+
+/Session05/Pipfile.lock
+/Session05/Pipfile

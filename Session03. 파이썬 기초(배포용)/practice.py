@@ -1,7 +1,1 @@
-a = "I like python"
-b = "No, i'm not"
-
-# print('adsfljkj')
-
-print(a + ' ' + b)
-
+print(('df' * 4).rjust(100))
