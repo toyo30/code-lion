@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>글 쓰기 페이지</h2>
+    {% comment %} 엑션과 매서드 엑션/ 공백이면 자기자신에게 요청을 보낸다.  {% endcomment %}
+    {% comment %} 생성하는 행위면 post 패서드를 보냄. {% endcomment %}
+    <form action="/new" method="post">{% csrf_token %}
+        <div>
+            <div>글 제목</div>
+            <input type="text" name="title" />
+        </div>
+        <div>
+            <div>글 내용</div>
+            <textarea name="content" cols="30" rows="10"></textarea>
+        </div>
+        <input type="text" name="cate" />
+        <button type="submit">작성 완료</button>
+    </form>
+</body>
+</html>
