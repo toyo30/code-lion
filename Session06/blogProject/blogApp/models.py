@@ -5,7 +5,8 @@ from django.db import models
 class Article(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
-    cate = models.CharField(max_length=10)
+    category = models.TextField(null=True, default='')
+    date = models.TextField(null=True, default='')
 
     #article 모델로 출력할 일이 있을 때, 출력 값을 타이틀로하겠다. 
     def __str__(self):
@@ -16,9 +17,9 @@ class Article(models.Model):
 # 이 클래스의 특성을 상속한다. 
 # models.Model의 클래스를 물려받는다. 
 
-class Person(models.Model):
-    name = models.CharField(max_length=10)
-    address =models.TextField()
+# class Person(models.Model):
+#     name = models.CharField(max_length=10)
+#     address =models.TextField()
 
 
 # Article.objects.create(title = "좋은날", content = "눈물이 차 올라서 고갤 들어")

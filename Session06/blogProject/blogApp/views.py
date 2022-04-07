@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Article
+import datetime
 
 # Create your views here.
 
@@ -17,7 +18,8 @@ def new(request):
         new_article = Article.objects.create(
             title = request.POST['title'],
             content = request.POST['content'],
-            cate = request.POST['category'],
+            category = request.POST['category'],
+            date =  datetime.datetime.today().replace(microsecond=0)
         )
         #글 목록페이지로 보여죽. redirect 다른 페이지로 보여주기 import redirect 해주기
         return redirect('list')
@@ -26,10 +28,38 @@ def new(request):
 
 def list(request):
     articles = Article.objects.all()
-    return render(request, 'list.html', {'articles': articles})
+    length = len(articles)
+    hobby_length = len(articles.filter(category = 'hobby'))
+    food_length = len(articles.filter(category = 'food'))
+    programming_length = len(articles.filter(category = 'programming'))
+    
+    return render(request, 'list.html', {
+        'articles': articles, 
+        'length': length, 
+        'hobby': 'hobby', 
+        'food': 'food', 
+        'programming': 
+        'programming', 
+        'hobby_length': hobby_length,
+        'food_length': food_length,
+        'programming_length': programming_length,
+        })
+
+def category(request, article_category):
+    articles = Article.objects.all().filter(category = article_category)
+    length = len(articles)
+    return render(request, 'category.html', {
+        'articles': articles, 
+        'length': length, 
+        'hobby': 'hobby', 
+        'food': 'food', 
+        'programming': 'programming',
+        'article_category': article_category,
+        })
 
 
 def detail(request, article_id):
     article = Article.objects.get(id = article_id)
+    print(article)
     return render(request, 'detail.html', {'article': article})
 

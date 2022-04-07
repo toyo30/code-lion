@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +8,40 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>글 전체 목록</h2>
-    <ul>
-        {% comment %} 반복문인가요? 설마 인덱스도 쓸 수 있니?{% endcomment %}
-        {% for article in articles %}
-        <a href="{% url 'detail' article.id %}"><li>{{ article.content}} </li></a>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'new' %}">글 쓰러 가기</a>
+    <div class="wrap">
+        <h2>글 전체 목록</h2>
+        <ul>
+            <div>
+                <p>총 게시글 수</p>
+                <p>{{length}}</p>
+            </div>
+            <div>
+                
+                <a href="{% url 'category' hobby %}">
+                    취미 
+                </a>
+                <br>
+                <a href="{% url 'category' food %}">
+                    음식
+                </a>
+                <br>
+                <a href="{% url 'category' programming %}">
+                    프로그래밍
+                </a>
+                <br> 
+            </div>
+            {% comment %} 반복문인가요? 설마 인덱스도 쓸 수 있니?{% endcomment %}
+            {% for article in articles %}
+            <a href="{% url 'detail' article.id %}">
+                <li>
+                    <p>category: {{article.category}}</p> 
+                    <p>date: {{article.date}}</p> 
+                    <p>content: {{article.content}}</p>
+                </li>
+            </a>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'new' %}">글 쓰러 가기</a>
+        </div>
 </body>
 </html>

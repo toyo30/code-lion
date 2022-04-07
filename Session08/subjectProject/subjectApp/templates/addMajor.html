@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전공 추가</title>
+</head>
+<body>
+    <h2>전공 추가</h2>
+    <div>
+        <form action="/addMajor/" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            
+                {% comment %} <label for="add-major">name</label>
+                <input type="text" name="add-major" id="add-major" placeholder="전공을 입력하세요."> {% endcomment %}
+        
+
+            <button>등록</button>
+            
+        </form>
+    </div>
+</body>
+</html>

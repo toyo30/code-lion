@@ -1,4 +1,4 @@
-"""blogProject URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,14 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blogApp import views
+from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('new', views.new, name='new'),
-    path('list', views.list, name='list'),
-    # path('detail/1', views.detail, name="detail"),
-    # path('detail/2', views.detail, name="detail"),
-    path('detail/<int:article_id>', views.detail, name='detail'),
-    path('category/<str:article_category>', views.category, name='category'),
+    path('', views.home, name="home"),
+    path('new/', views.new, name="new"),
+    path('detail/<int:post_pk>/', views.detail, name='detail'),
+    path('edit/<int:post_pk>/', views.edit, name="edit"),
+    path('delete/<int:post_pk>/', views.delete, name='delete'),
 ]

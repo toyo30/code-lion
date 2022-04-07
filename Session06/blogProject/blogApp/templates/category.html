@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>글 전체 목록</h2>
+    <ul>
+        <div>
+            <p>{{article_category}}</p>
+            <p>{{length}}</p>
+        </div>
+        <div>
+            <a href="{% url 'list' %}">
+                <p>전체 게시글</p><span>{{length}}</span>
+            </a>
+            <a href="{% url 'category' hobby %}"> 
+                <p>취미</p><span>{{hobby_length}}</span>
+            </a>
+            <br>
+            <a href="{% url 'category' food %}">
+                <p>음식</p><span>{{food_length}}</span>
+            </a>
+            <br>
+            <a href="{% url 'category' programming %}">
+                <p>프로그래밍</p><span>{{programming_length}}</span>
+            </a>
+        </div>
+        {% comment %} 반복문인가요? 설마 인덱스도 쓸 수 있니?{% endcomment %}
+        {% for article in articles %}
+        <a href="{% url 'detail' article.id %}">
+            <li>
+                <p>category: {{article.category}}</p> 
+                <p>date: {{article.date}}</p> 
+                <p>content: {{article.content}}</p>
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'new' %}">글 쓰러 가기</a>
+</body>
+</html>
